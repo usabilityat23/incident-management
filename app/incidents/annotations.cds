@@ -140,16 +140,18 @@ annotate service.Incidents with {
                     LocalDataProperty : customer_ID,
                     ValueListProperty : 'ID',
                 },
+                {
+                    $Type : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'name',
+                },
+                {
+                    $Type : 'Common.ValueListParameterDisplayOnly',
+                    ValueListProperty : 'email',
+                },
             ],
         },
-        Common.ValueListWithFixedValues : true
+        Common.ValueListWithFixedValues : false
 )};
-annotate service.Customers with {
-    ID @Common.Text : {
-        $value : name,
-        ![@UI.TextArrangement] : #TextOnly,
-    }
-};
 annotate service.Incidents with {
     status @Common.Text : status.descr
 };
